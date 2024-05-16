@@ -31,62 +31,40 @@ const App = () => {
     //     }
     // },[])
 
-  //   const canvasRef = useRef(null);
+    const canvasRef = useRef(null);
 
-  // useEffect(() => {
-  //   const canvas = canvasRef.current;
-  //   const ctx = canvas.getContext('2d');
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
 
-  //   const image1 = new Image();
-  //   const image2 = new Image();
+    const image1 = new Image();
+    const image2 = new Image();
 
-  //   // Путь к вашим изображениям
-  //   image1.src = '/images/GF.png';
-  //   image2.src = '/images/maskGF.png';
+    // Путь к вашим изображениям
+    image2.src = '/images/maskGF.png';
+    image1.src = '/images/GF.png';
 
-  //   image1.onload = () => {
-  //     // Определяем коэффициенты масштабирования для подгонки первого изображения
-  //     const scaleWidth = canvas.width / image1.width;
-  //     const scaleHeight = canvas.height / image1.height;
-      
-  //     // Выбираем коэффициент для масштабирования, если нужно уменьшить высоту и немного увеличить ширину
-  //     const scale = Math.max(scaleWidth, scaleHeight);
+    image1.onload = () => {
+      // Рисуем первое изображение на всем холсте
+      ctx.drawImage(image1, 0, 0, canvas.width, canvas.height);
 
-  //     // Центрируем первое изображение на холсте
-  //     const x1 = (canvas.width - image1.width * scale) / 2;
-  //     const y1 = (canvas.height - image1.height * scale) / 2;
-
-  //     // Рисуем первое изображение с масштабированием и центрированием
-  //     ctx.drawImage(image1, x1, y1, image1.width * scale, image1.height * scale);
-
-  //     image2.onload = () => {
-  //       // Устанавливаем режим композиции
-  //       ctx.globalCompositeOperation = 'source-atop';
-
-  //       // Координаты для второго изображения
-  //       const top = 380;
-  //       const left = 1525;
-
-  //       // Масштабируем координаты для второго изображения
-  //       const x2 = x1 + left * scale;
-  //       const y2 = y1 + top * scale;
-
-  //       // Рисуем второе изображение с масштабированием и заданной позицией
-  //       ctx.drawImage(image2, x2, y2, image2.width * scale, image2.height * scale);
-
-  //       // Сбрасываем режим композиции на default, если будут другие рисунки
-  //       ctx.globalCompositeOperation = 'source-over';
-  //     };
-  //   };
-  // }, []);
+      image2.onload = () => {
+        // Устанавливаем режим композиции
+        ctx.globalCompositeOperation = 'source-atop';
+  
+        // Рисуем второе изображение поверх первого
+        ctx.drawImage(image2, 0, 0, canvas.width, canvas.height);
+  
+        // Сбрасываем режим композиции на default, если будут другие рисунки
+        ctx.globalCompositeOperation = 'source-over'
+      };
+    };
+  }, []);
   return (
-    // <div className='app'>
-    //   <canvas ref={canvasRef} width={500} height={500} style={{ border: '1px solid black' }}></canvas>
-    // </div>
     <div className='app'>
-      <img src='/images/GF.png' id='gf'/>
-      <img src='/images/maskGF.png' id='mask'/>
+      <canvas ref={canvasRef} width={900} height={900} style={{ border: '1px solid black' }}></canvas>
     </div>
+    
   )
 }
 
