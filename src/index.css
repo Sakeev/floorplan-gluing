@@ -12,20 +12,9 @@
   background-image: url("../public/images/background.png");
   background-size: cover;
   position: relative;
+
 }
 
-#gf{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 100%;
-}
-#mask{
-  height: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+canvas{
+  
 }
