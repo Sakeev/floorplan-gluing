@@ -6,7 +6,7 @@ const App = () => {
   const [activeLayer, setActiveLayer] = useState(1);
 
   const handleLayerChange = (floor) => {
-    setActiveLayer(floor);
+    
   };
 
   return (
@@ -20,10 +20,10 @@ const App = () => {
             />
          
       </div>
-      <div style={{ position: 'absolute', top: 10, left: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: 100}}>
-        <button onClick={() => handleLayerChange(2)}>2F</button>
-        <button onClick={() => handleLayerChange(1)}>1F</button>
-        <button onClick={() => handleLayerChange(0)}>GF</button>
+      <div style={{ position: 'absolute', top: 10, left: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: 100, zIndex: 5}}>
+        <button onClick={() => setActiveLayer(2)}>2F</button>
+        <button onClick={() => setActiveLayer(1)}>1F</button>
+        <button onClick={() => setActiveLayer(0)}>GF</button>
       </div>
     </div>
   );
