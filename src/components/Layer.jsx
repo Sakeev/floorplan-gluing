@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-const Layer = ({ layer, index, isVisible }) => {
+const Layer = ({ layer, index }) => {
   const canvasRef = useRef(null);
   const savedLayerRef = useRef(null);
   const [scale, setScale] = useState(1);
