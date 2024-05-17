@@ -8,9 +8,9 @@ const config = {
           { src: '/images/GF-outside.png' },
           { src: '/images/GF.png' }
         ],
-        opacity: 0.28,
+        opacity: false,
         position: { x: 0, y: 0 },
-        size: { width: 900, height: 900 }
+        size: { width: 1000, height: 1000 }
       },
       {
         id: 'layer2',
@@ -18,9 +18,9 @@ const config = {
           { src: '/images/1F-outside.png' },
           { src: '/images/1F.png' }
         ],
-        opacity: 0.28,
+        opacity: 0.6,
         position: { x: 0, y: 0 },
-        size: { width: 900, height: 900 }
+        size: { width: 1000, height: 1000 }
       },
       {
         id: 'layer3',
@@ -28,14 +28,14 @@ const config = {
           { src: '/images/2F-outside.png' },
           { src: '/images/2F.png' }
         ],
-        opacity: 0.28,
+        opacity: 0.8,
         position: { x: 0, y: 0 },
-        size: { width: 900, height: 900 }
+        size: { width: 1000, height: 1000 }
       }
     ],
     groupOpacity: 0.5,
     groupPosition: { x: 0, y: 0 },
-    groupSize: { width: 900, height: 900 },
+    groupSize: { width: 1000, height: 1000 },
   };
   
   export default config;
